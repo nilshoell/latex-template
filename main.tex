@@ -51,7 +51,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 \usepackage{graphicx}
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{subcaption} % Required for nested captions
-\usepackage{wprapfigure} % Required for wrapping text around figures
+\usepackage{wrapfig} % Required for wrapping text around figures
 
 \usepackage{csquotes} % Generates quotes with \enquote{Text}
 
@@ -102,7 +102,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 % Better highlighting for inline code
 \newcommand{\linecode}[1]{
-  \,\texttt{#1}\,
+  \,\textbf{\texttt{#1}}\,
 }
 
 %----------------------------------------------------------------------------------------
@@ -241,6 +241,9 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 \begin{abstract}
  \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
  Hier kommt eine ganz tolle Zusammenfassung / Abstract hin.\\
+ \\
+ \noindent Beispiel für \texttt{inlineCode} mit texttt.\\
+ \noindent Beispiel für \linecode{inlineCode} mit linecode.
 \end{abstract}
 
 %----------------------------------------------------------------------------------------
