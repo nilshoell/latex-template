@@ -1,4 +1,4 @@
-# latex-template
+# LaTeX Thesis Template
 
 This LaTeX template was originally developed by Vel (vel@latextemplates.com) and Johannes Böttcher from [Latextemplates.com](http://www.latextemplates.com/template/masters-doctoral-thesis). After using it for several projects (together with [Christian Hauff](https://github.com/christianhauff)) and finally my bachelor thesis, I recognized that I made several changes to the original template to fit my purposes.
 
@@ -59,6 +59,6 @@ Special colors have been defined for the background of the listings, comments, k
 
 This template is under continuous development and will be updated from time to time.
 
-## Licence
+## License
 
-The template is licensed under the CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/). The `.cls`-File is licensed under the LPPL v1.3c (http://www.latex-project.org/lppl).
+The template is licensed under the CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). The `.cls`-File is licensed under the LPPL v1.3c (http://www.latex-project.org/lppl).

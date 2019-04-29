@@ -1,63 +1,83 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Version 1.5.0 (2018-10-07)
+% Version 1.5.1 (2019-04-29)
 %
 % Created by Vel (vel@latextemplates.com) and Johannes Böttcher
-% Based on http://www.latextemplates.com/template/masters-doctoral-thesis
+% Based on https://www.latextemplates.com/template/masters-doctoral-thesis
 %
 % Modified by Christian Hauff & Nils Siegle
 %	
 % Template license:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 %----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%	BASIC DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
 oneside, % One side output by default, comment it out to switch to two side with alternating margins
-ngerman, % ngerman for (new) German -> (Neue Rechtschreibung, wichtig für Zeilenumbrüche in einem Wort)
+ngerman, % ngerman for (new) German -> (New spelling, important for line breaks in a word)
 singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
-%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
-%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
-%liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
-%toctotoc, % Uncomment to add the main table of contents to the table of contents
-%parskip, % Uncomment to add space between paragraphs
-%nohyperref, % Uncomment to not load the hyperref package
+% draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+% nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+% toctotoc, % Uncomment to add the main table of contents to the table of contents
+% parskip, % Uncomment to add space between paragraphs
+% nohyperref, % Uncomment to not load the hyperref package
 headsepline, % Uncomment to get a line under the header
 chapterinoneline, % Uncomment to place the chapter title next to the number on one line
-%consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+% consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 
+
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	inner=2.8cm, % Inner margin
+	outer=2.8cm, % Outer margin
+	bindingoffset=.5cm, % Binding offset
+	top=1.5cm, % Top margin
+	bottom=1.5cm, % Bottom margin
+	% showframe, % Uncomment to show how the type block is set on the page
+}
+
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+
+% ------ FONTS ------
 \usepackage[T1]{fontenc} % Output font encoding
 \usepackage[utf8]{inputenc} % Required for inputting international characters
-
 \usepackage{lmodern,textcomp} %Latin modern font
-
-\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 \usepackage{mathpazo} % Use the Palatino font by default
-\usepackage{shortvrb}
-\usepackage{float}
-\restylefloat{table}
 
-\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
-% DIN ISO: science
-
+% ------ BIBLIOGRAPHY ------
+\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA); DIN ISO: science
 \addbibresource{sources.bib} % The filename of the bibliography
 
-\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
-
+% ------ FIGURES ------
 \usepackage{graphicx}
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{subcaption} % Required for nested captions
 \usepackage{wrapfig} % Required for wrapping text around figures
 
-\usepackage{csquotes} % Generates quotes with \enquote{Text}
+% ------ OTHER ------
+\usepackage{shortvrb}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 
+\usepackage{float}
+\restylefloat{table}
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography; generates quotes with \enquote{Text}
 \hbadness=99999 %suppresses most underfull hbox warnings
 
-%Listing Options
+% ------ LISTINGS ------
 \usepackage{listings}
 
 % Define JavaScript language support
@@ -70,12 +90,16 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
   sensitive=true
 }
 
-\usepackage{listings}
+% Load required languages
 \lstloadlanguages{PHP, XML, HTML, Java, JavaScript, SQL}
+
+% Define colors for highlighting
 \definecolor{lstbg}{gray}{0.95}
 \definecolor{lstComment}{RGB}{51, 102, 0}
 \definecolor{lstKey}{RGB}{0, 51, 204}
 \definecolor{lstStr}{RGB}{162, 43, 43}
+
+% Styling
 \lstset{
 	showtabs=false,
 	showspaces=false,
@@ -94,6 +118,11 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 	%prebreak=\mbox{\textbackslash}%,
 }
 
+
+%----------------------------------------------------------------------------------------
+%	ADDITIONAL COMMANDS
+%----------------------------------------------------------------------------------------
+
 % Option to move href url to footnote for printing
 \newcommand{\printurl}[2]{ % Options below are mutually exclusive!
    \href{#1}{#2} % Uncomment for standard href
@@ -106,24 +135,10 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 }
 
 %----------------------------------------------------------------------------------------
-%	MARGIN SETTINGS
-%----------------------------------------------------------------------------------------
-
-\geometry{
-	paper=a4paper, % Change to letterpaper for US letter
-	inner=2.8cm, % Inner margin
-	outer=2.8cm, % Outer margin
-	bindingoffset=.5cm, % Binding offset
-	top=1.5cm, % Top margin
-	bottom=1.5cm, % Bottom margin
-	%showframe, % Uncomment to show how the type block is set on the page
-}
-
-%----------------------------------------------------------------------------------------
 %	THESIS INFORMATION
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Toller Titel} % Your thesis title, print it elsewhere with \ttitle
+\thesistitle{Catchy Title} % Your thesis title, print it elsewhere with \ttitle
 \supervisor{Prof. Supervisor} % Your supervisor's name, print it elsewhere with \supname
 \examiner{Prof. Dr. Examiner} % Your examiner's name, print it elsewhere with \examname
 \degree{Bachelor Thesis} % Your degree name, print it elsewhere with \degreename
@@ -258,17 +273,16 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 %----------------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
 %----------------------------------------------------------------------------------------
-{\hypersetup{linkcolor=black} %Black links in all lists, curly brackets for local adjustment
+{\hypersetup{linkcolor=black} % Black links in all lists, curly brackets for local adjustment
 \tableofcontents % Prints the main table of contents
 
 \listoffigures % Prints the list of figures
-\addchaptertocentry{Abbildungen}
 
 \listoftables % Prints the list of tables
-\addchaptertocentry{Tabellen}
 
 \lstlistoflistings %Prints the list of (code) listings
 \addchaptertocentry{Listings}}
+
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
 %----------------------------------------------------------------------------------------
