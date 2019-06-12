@@ -15,7 +15,7 @@ Most (printed) texts are currently in german, but this mainly affects the dummy 
 
 Two options are available for prettifying the document if it needs to be printed:
 
-The `\printurl{}{}`-Command works like the standard `\href`, but can be changed to print the url in a footnote, as hyperlinks do somehow not work in printed documents. Just change the definition of the command in line 95 of the `main.tex`-file as follows (Please only activate **one** of the definitions):
+The `\printurl{}{}`-Command works like the standard `\href`, but can be changed to print the url in a footnote, as hyperlinks do somehow not work in printed documents. Just change the definition of the command in line 128 of the `main.tex`-file as follows (Please only activate **one** of the definitions):
 
 ```tex
 \newcommand{\printurl}[2]{
@@ -24,7 +24,7 @@ The `\printurl{}{}`-Command works like the standard `\href`, but can be changed 
 }
 ```
 
-To hide all links you can make them black like the rest of the text (Line 133):
+To hide all links you can make them black like the rest of the text (Line 168):
 
 ```tex
 \hypersetup{hidelinks=true,}

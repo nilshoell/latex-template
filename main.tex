@@ -1,10 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Version 1.5.1 (2019-04-29)
+% Version 1.5.2 (2019-06-12)
 %
 % Created by Vel (vel@latextemplates.com) and Johannes Böttcher
 % Based on https://www.latextemplates.com/template/masters-doctoral-thesis
 %
-% Modified by Christian Hauff & Nils Siegle
+% Modified by Nils Siegle & Christian Hauff
 %	
 % Template license:
 % CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
@@ -66,6 +66,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{subcaption} % Required for nested captions
 \usepackage{wrapfig} % Required for wrapping text around figures
+% \usepackage{forest} % For generating directory trees
 
 % ------ OTHER ------
 \usepackage{shortvrb}
@@ -134,6 +135,16 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
   \,\textbf{\texttt{#1}}\,
 }
 
+% Outputs 'Kapitel X' as a clickable link
+\newcommand{\chapref}[1]{
+  \hyperref[#1]{Kapitel \ref{#1}}
+}
+
+% Outputs 'Anhang X' as a clickable link
+\newcommand{\appref}[1]{
+  \hyperref[#1]{Anhang \ref{#1}}
+}
+
 %----------------------------------------------------------------------------------------
 %	THESIS INFORMATION
 %----------------------------------------------------------------------------------------
@@ -149,20 +160,25 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 \university{\href{https://myserver.com/}{University}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
 \faculty{\href{https://myserver.com/}{Faculty}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
 
+
+% ------ HYPERSETUP ------
 \AtBeginDocument{
 \hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
 \hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
-%\hypersetup{hidelinks=true,} % Uncomment to print all links black
+\hypersetup{hidelinks=true,} % Prints all links black; comment out for default LaTeX behavior
 }
 
 \begin{document}
 
+% ------ PAGE NUMBERING ------
 \frontmatter % Use roman page numbering style (I, II, III, IV...) for the pre-content pages
 \pagenumbering{Roman} % Capital roman numbers, use "roman" or comment for lower case (i, ii, iii, iv...)
 
 \pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
 
 \sloppy
+
+
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -211,8 +227,9 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
  \end{center}
 \end{titlepage}
 
+
 %----------------------------------------------------------------------------------------
-%	DECLARATION PAGE
+%	DECLARATION PAGE (Declaration of Independence)
 %----------------------------------------------------------------------------------------
 
 \begin{declaration}
@@ -238,8 +255,9 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 \cleardoublepage
 
+
 %----------------------------------------------------------------------------------------
-%	QUOTATION PAGE
+%	QUOTATION PAGE (For a deep quote about the topic)
 %----------------------------------------------------------------------------------------
 
 \vspace*{0.2\textheight}
@@ -247,6 +265,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 \noindent\enquote{\itshape Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the universe trying to build bigger and better idiots. So far, the universe is winning.}\bigbreak
 
 \hfill Rick Cook
+
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT PAGE
@@ -261,6 +280,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
  \noindent Beispiel für \linecode{inlineCode} mit linecode.
 \end{abstract}
 
+
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
@@ -270,18 +290,21 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
  Ich bedanke mich bei \supname \,für die Betreuung dieser Arbeit.\\
 \end{acknowledgements}
 
+
 %----------------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
 %----------------------------------------------------------------------------------------
 {\hypersetup{linkcolor=black} % Black links in all lists, curly brackets for local adjustment
-\tableofcontents % Prints the main table of contents
+  \tableofcontents % Prints the main table of contents
 
-\listoffigures % Prints the list of figures
+  \listoffigures % Prints the list of figures
 
-\listoftables % Prints the list of tables
+  \listoftables % Prints the list of tables
 
-\lstlistoflistings %Prints the list of (code) listings
-\addchaptertocentry{Listings}}
+  \lstlistoflistings %Prints the list of (code) listings
+  \addchaptertocentry{Listings}
+}
+
 
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
@@ -308,6 +331,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 \end{abbreviations}
 
+
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
 %----------------------------------------------------------------------------------------
@@ -325,6 +349,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 \include{Chapters/Chapter4}
 \include{Chapters/Chapter5}
 
+
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
 %----------------------------------------------------------------------------------------
@@ -337,6 +362,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 % \include{Appendices/AppendixA}
 % \include{Appendices/AppendixB}
 % \include{Appendices/AppendixC}
+
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
