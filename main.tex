@@ -68,6 +68,12 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 \usepackage{wrapfig} % Required for wrapping text around figures
 % \usepackage{forest} % For generating directory trees
 
+% ------ TRANSLATIONS ------
+\usepackage{translator}
+
+% Include translations
+\input{translations.tex}
+
 % ------ OTHER ------
 \usepackage{shortvrb}
 \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
@@ -132,17 +138,17 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 % Better highlighting for inline code
 \newcommand{\linecode}[1]{
-  \,\textbf{\texttt{#1}}\,
+  \textbf{\texttt{#1}}
 }
 
-% Outputs 'Kapitel X' as a clickable link
+% Outputs 'Chapter X' (or translation) as a clickable link
 \newcommand{\chapref}[1]{
-  \hyperref[#1]{Kapitel \ref{#1}}
+  \hyperref[#1]{\translate{chapter} \ref{#1}}
 }
 
-% Outputs 'Anhang X' as a clickable link
+% Outputs 'Appendix X' (or translation) as a clickable link
 \newcommand{\appref}[1]{
-  \hyperref[#1]{Anhang \ref{#1}}
+  \hyperref[#1]{\translate{appendix} \ref{#1}}
 }
 
 %----------------------------------------------------------------------------------------
@@ -189,7 +195,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
   \vspace*{.04\textheight}
   {\scshape\LARGE \univname\par}\vspace{0.8cm} % University name
   {\scshape\LARGE \facname\par}\vspace{0.8cm} % Faculty name
-  \textsc{\Large Studiengang:}\\[0.5cm] % Thesis type
+  \textsc{\Large \translate{studyProgramme}:}\\[0.5cm] % Thesis type
   \textsc{\Large \degreename}\\[0.5cm] % Thesis type
 
   \HRule \\[0.4cm] % Horizontal line
@@ -198,20 +204,20 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
   \begin{minipage}[t]{0.4\textwidth}
     \begin{flushleft} \large
-     \emph{Vorgelegt von:}
+     \emph{\translate{submittedBy}:}
      \newline
      \authorname
      \newline
-     Matrikelnummer: 123456
+     \translate{matNum}: 123456
      \newline
      \addressname
     \end{flushleft}
    \end{minipage}
    \begin{minipage}[t]{0.4\textwidth}
     \begin{flushright} \large
-     \emph{Erstprüfer:} \\
+     \emph{\translate{initEx}:} \\
      \href{https://myserver.com}{\supname}\\
-     \emph{Zweitprüfer:} \\
+     \emph{\translate{secEx}:} \\
      \href{https://myserver.com}{\examname}
     \end{flushright}
    \end{minipage}\\[1cm]

@@ -55,6 +55,15 @@ Special colors have been defined for the background of the listings, comments, k
 \definecolor{lstStr}{RGB}{162, 43, 43}
 ```
 
+### Chapter Referencing
+
+Usually, when I reference another chapter, I would write `see chapter \ref{chapterRef}`. Unfortunately, only the number (or letter) of the chapter is clickable as a link, it would be better to have the whole `chapter 3.1` as a link. As this would require some unreadable construct like
+
+```tex
+\hyperref[chapterRef]{chapter \ref{chapterRef}}
+```
+where you have to get the brackets and braces right, I implemented the commands `\chapref{}` and `\appref{}`. Those will print the link as shown above, with the correct translation of either 'chapter' or 'appendix'.
+
 ## Development
 
 This template is under continuous development and will be updated from time to time.
