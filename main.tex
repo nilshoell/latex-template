@@ -74,6 +74,10 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 % Include translations
 \input{translations.tex}
 
+% ------ ACRONYMS ------
+\usepackage[nohyperlinks]{acronym}
+% \usepackage[nohyperlinks, printonlyused]{acronym} % Prints only used acronyms in overview
+
 % ------ OTHER ------
 \usepackage{shortvrb}
 \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
@@ -315,27 +319,30 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
 %----------------------------------------------------------------------------------------
-
-\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
-
- \textbf{Abkürzung} & \textbf{Bedeutung} \\
- \hline
- \textbf{ACL} & \textbf{A}ccess \textbf{C}ontrol \textbf{L}ist\\
- \textbf{AJAX} & \textbf{A}synchronous \textbf{J}avaScript \textbf{A}nd \textbf{X}ML\\
- \textbf{API} & \textbf{A}pplication \textbf{P}rogramming \textbf{I}nterface\\
- \textbf{CSS} & \textbf{C}ascading \textbf{S}tyle \textbf{S}sheets\\
- \textbf{GUI} & \textbf{G}raphical \textbf{U}ser \textbf{I}nterface\\
- \textbf{HTML} & \textbf{H}yper\textbf{t}ext \textbf{M}arkup \textbf{L}anguage\\
- \textbf{JSON} & \textbf{J}ava\textbf{S}cript \textbf{O}bject \textbf{N}otation\\
- \textbf{PHP} & \textbf{PHP} \textbf{H}ypertext \textbf{P}reprocessor\\
- \textbf{SQL} & \textbf{S}tructured \textbf{Q}uery \textbf{L}anguage\\ 
- \textbf{UID} & \textbf{U}ser \textbf{Id}entifier\\
- \textbf{URL} & \textbf{U}niform \textbf{R}esource \textbf{L}ocator\\
- \textbf{UX} & \textbf{U}ser E\textbf{x}perience\\
-
- % \textbf{} & \textbf{} \textbf{} \textbf{}\\
-
-\end{abbreviations}
+  
+\chapter{\abbrevname}
+\begin{acronym}[AAAAAA]
+  % \addchaptertocentry{\abbrevname} % Add abbreviations to toc
+  \acro{acl}[ACL]{Access Control List}
+  \acro{ajax}[AJAX]{Asynchronous JavaScript and XML}
+  \acro{api}[API]{Application Programming Interface}
+  \acro{css}[CSS]{Cascading Style Sheets}
+  \acro{gui}[GUI]{Graphical User Interface}
+  \acro{html}[HTML]{Hypertext Markup Language}
+  \acro{json}[JSON]{JavaScript Object Notation}
+  \acro{php}[PHP]{PHP Hypertext Preprocessor}
+  \acro{sql}[SQL]{Structured Query Language}
+  \acro{uid}[UID]{User Identifier}
+  \acro{url}[URL]{Uniform Resource Locator}
+  \acro{ux}[UX]{User Experience}
+  % \acro{}[]{}
+\end{acronym}
+% Use 
+% - \ac{id} for standard behavior
+% - \acs{id} for acronym
+% - \acl{id} for long version
+% - \acp{id} for plural (with 's' at the end)
+% See https://de.wikibooks.org/wiki/LaTeX-W%C3%B6rterbuch:_Abk%C3%BCrzungsverzeichnis
 
 
 %----------------------------------------------------------------------------------------
