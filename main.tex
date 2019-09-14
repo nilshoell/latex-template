@@ -5,50 +5,50 @@
 % Based on https://www.latextemplates.com/template/masters-doctoral-thesis
 %
 % Modified by Nils Siegle & Christian Hauff
-%	
+%  
 % Template license:
 % CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %----------------------------------------------------------------------------------------
-%	BASIC DOCUMENT CONFIGURATIONS
+%  BASIC DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
 \documentclass[
-11pt, % The default document font size, options: 10pt, 11pt, 12pt
-oneside, % One side output by default, comment it out to switch to two side with alternating margins
-ngerman, % ngerman for (new) German -> (New spelling, important for line breaks in a word)
-singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
-% draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
-% nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
-liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
-% toctotoc, % Uncomment to add the main table of contents to the table of contents
-% parskip, % Uncomment to add space between paragraphs
-% nohyperref, % Uncomment to not load the hyperref package
-headsepline, % Uncomment to get a line under the header
-chapterinoneline, % Uncomment to place the chapter title next to the number on one line
-% consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+  11pt, % The default document font size, options: 10pt, 11pt, 12pt
+  oneside, % One side output by default, comment it out to switch to two side with alternating margins
+  ngerman, % ngerman for (new) German -> (New spelling, important for line breaks in a word)
+  singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+  % draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+  % nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+  liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+  % toctotoc, % Uncomment to add the main table of contents to the table of contents
+  % parskip, % Uncomment to add space between paragraphs
+  % nohyperref, % Uncomment to not load the hyperref package
+  headsepline, % Uncomment to get a line under the header
+  chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+  % consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 
 
 %----------------------------------------------------------------------------------------
-%	MARGIN SETTINGS
+%  MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
 
 \geometry{
-	paper=a4paper, % Change to letterpaper for US letter
-	inner=2.8cm, % Inner margin
-	outer=2.8cm, % Outer margin
-	bindingoffset=.5cm, % Binding offset
-	top=1.5cm, % Top margin
-	bottom=1.5cm, % Bottom margin
-	% showframe, % Uncomment to show how the type block is set on the page
+  paper=a4paper, % Change to letterpaper for US letter
+  inner=2.8cm, % Inner margin
+  outer=2.8cm, % Outer margin
+  bindingoffset=.5cm, % Binding offset
+  top=1.5cm, % Top margin
+  bottom=1.5cm, % Bottom margin
+  % showframe, % Uncomment to show how the type block is set on the page
 }
 
 
 %----------------------------------------------------------------------------------------
-%	PACKAGES
+%  PACKAGES
 %----------------------------------------------------------------------------------------
 
 % ------ FONTS ------
@@ -58,7 +58,8 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 \usepackage{mathpazo} % Use the Palatino font by default
 
 % ------ BIBLIOGRAPHY ------
-\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA); DIN ISO: science
+% Use the bibtex backend with the authoryear citation style (which resembles APA); DIN ISO: science
+\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex}
 \addbibresource{sources.bib} % The filename of the bibliography
 
 % ------ FIGURES ------
@@ -112,26 +113,26 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 % Styling
 \lstset{
-	showtabs=false,
-	showspaces=false,
-	%tabsize=4,
-	%tab=\rightarrowfill,
-	showstringspaces=false,
-	basicstyle=\ttfamily,
-	columns=fullflexible,
-	frame=single,
-	%frameround=tttt,
-	breaklines=true,
-	backgroundcolor=\color{lstbg},
-	commentstyle=\color{lstComment},
-	stringstyle=\color{lstStr},
-	keywordstyle=\color{lstKey},
-	%prebreak=\mbox{\textbackslash}%,
+  showtabs=false,
+  showspaces=false,
+  %tabsize=4,
+  %tab=\rightarrowfill,
+  showstringspaces=false,
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  %frameround=tttt,
+  breaklines=true,
+  backgroundcolor=\color{lstbg},
+  commentstyle=\color{lstComment},
+  stringstyle=\color{lstStr},
+  keywordstyle=\color{lstKey},
+  %prebreak=\mbox{\textbackslash}%,
 }
 
 
 %----------------------------------------------------------------------------------------
-%	ADDITIONAL COMMANDS
+%  ADDITIONAL COMMANDS
 %----------------------------------------------------------------------------------------
 
 % Option to move href url to footnote for printing
@@ -156,7 +157,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 }
 
 %----------------------------------------------------------------------------------------
-%	THESIS INFORMATION
+%  THESIS INFORMATION
 %----------------------------------------------------------------------------------------
 
 \thesistitle{Catchy Title} % Your thesis title, print it elsewhere with \ttitle
@@ -173,9 +174,9 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 % ------ HYPERSETUP ------
 \AtBeginDocument{
-\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
-\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
-\hypersetup{hidelinks=true,} % Prints all links black; comment out for default LaTeX behavior
+  \hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+  \hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+  \hypersetup{hidelinks=true,} % Prints all links black; comment out for default LaTeX behavior
 }
 
 \begin{document}
@@ -190,7 +191,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 
 %----------------------------------------------------------------------------------------
-%	TITLE PAGE
+%  TITLE PAGE
 %----------------------------------------------------------------------------------------
 
 \begin{titlepage}
@@ -239,7 +240,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 
 %----------------------------------------------------------------------------------------
-%	DECLARATION PAGE (Declaration of Independence)
+%  DECLARATION PAGE (Declaration of Independence)
 %----------------------------------------------------------------------------------------
 
 \begin{declaration}
@@ -267,7 +268,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 
 %----------------------------------------------------------------------------------------
-%	QUOTATION PAGE (For a deep quote about the topic)
+%  QUOTATION PAGE (For a deep quote about the topic)
 %----------------------------------------------------------------------------------------
 
 \vspace*{0.2\textheight}
@@ -278,7 +279,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 
 %----------------------------------------------------------------------------------------
-%	ABSTRACT PAGE
+%  ABSTRACT PAGE
 %----------------------------------------------------------------------------------------
 \MakeShortVerb{\|}
 
@@ -292,7 +293,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 
 %----------------------------------------------------------------------------------------
-%	ACKNOWLEDGEMENTS
+%  ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 
 \begin{acknowledgements}
@@ -302,7 +303,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 
 %----------------------------------------------------------------------------------------
-%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%  LIST OF CONTENTS/FIGURES/TABLES PAGES
 %----------------------------------------------------------------------------------------
 {\hypersetup{linkcolor=black} % Black links in all lists, curly brackets for local adjustment
   \tableofcontents % Prints the main table of contents
@@ -317,7 +318,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 
 %----------------------------------------------------------------------------------------
-%	ABBREVIATIONS
+%  ABBREVIATIONS
 %----------------------------------------------------------------------------------------
   
 \chapter{\abbrevname}
@@ -345,7 +346,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 
 %----------------------------------------------------------------------------------------
-%	THESIS CONTENT - CHAPTERS
+%  THESIS CONTENT - CHAPTERS
 %----------------------------------------------------------------------------------------
 
 \mainmatter % Begin numeric (1,2,3...) page numbering
@@ -363,7 +364,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 
 %----------------------------------------------------------------------------------------
-%	THESIS CONTENT - APPENDICES
+%  THESIS CONTENT - APPENDICES
 %----------------------------------------------------------------------------------------
 
 \appendix % Cue to tell LaTeX that the following "chapters" are Appendices
@@ -377,7 +378,7 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 
 
 %----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
+%  BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
 \printbibliography[heading=bibintoc]
