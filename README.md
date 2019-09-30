@@ -4,12 +4,61 @@ This LaTeX template was originally developed by Vel (vel@latextemplates.com) and
 
 This version is now optimized and prepared for the documentation of programming or software engineering works and comes with a lot of packages I found useful.
 
+- [LaTeX Thesis Template](#latex-thesis-template)
+  - [Usage](#usage)
+    - [Basic Setup](#basic-setup)
+    - [Thesis Information](#thesis-information)
+  - [Features](#features)
+    - [Translations](#translations)
+    - [Print-Mode](#print-mode)
+    - [Listings](#listings)
+    - [Chapter Referencing](#chapter-referencing)
+    - [Figure Referencing](#figure-referencing)
+  - [Development](#development)
+  - [License](#license)
+
 ## Usage
 
 The template layout was adopted to fit the regulations of my university, but should be easily changed.  
 Most (printed) texts are currently in german, but this mainly affects the dummy content.
 
+### Basic Setup
+
+| Key                | Meaning (if true)                                                                                     |
+| ------------------ | ----------------------------------------------------------------------------------------------------- |
+| `11pt`             | The default document font size, options: 10pt, 11pt, 12pt                                             |
+| `oneside`          | Adds empty pages for one-sided printing, use `twoside` for alternating binding margins                |
+| `ngerman`          | Language loaded by babel, use `english` or `naustrian` for the respecting languages                   |
+| `singlespacing`    | Single line spacing, alternatives: `onehalfspacing` or `doublespacing`                                |
+| `draft`            | Enable draft mode (no pictures, no links, overfull hboxes indicated)                                  |
+| `nolistspacing`    | If the document is onehalfspacing or doublespacing; sets spacing in lists to single                   |
+| `liststotoc`       | Add the list of figures/tables/etc to the table of contents                                           |
+| `toctotoc`         | Add the main table of contents to the table of contents                                               |
+| `parskip`          | Add space between paragraphs                                                                          |
+| `nohyperref`       | Do not load the hyperref package                                                                      |
+| `headsepline`      | Line under the header                                                                                 |
+| `chapterinoneline` | Place the chapter title next to the number on one line                                                |
+| `consistentlayout` | Change the layout of the declaration, abstract and acknowledgements pages to match the default layout |
+
+### Thesis Information
+
+| Variable       | Meaning                                  | Usage          |
+| -------------- | ---------------------------------------- | -------------- |
+| `\thesistitle` | Title of the thesis                      | `\ttitle`      |
+| `\author`      | Name of the author                       | `\authorname`  |
+| `\supervisor`  | Name of the supervisor                   | `\supname`     |
+| `\examiner`    | Name of the examiner                     | `\exaname`     |
+| `\degree`      | Name of the degree (Master/Bachelor/PhD) | `\degreename`  |
+| `\addresses`   | Address of the author                    | `\addressname` |
+| `\subject`     | Subject area                             | `\subjectname` |
+| `\university`  | University name                          | `\univname`    |
+| `\faculty`     | Faculty name                             | `\facname`     |
+
 ## Features
+
+### Translations
+
+The `translations.tex`-file provides a couple of additional translations that are mainly used in custom commands and the title page, and can easily extended with other languages or keywords.
 
 ### Print-Mode
 
@@ -27,7 +76,7 @@ The `\printurl{}{}`-Command works like the standard `\href`, but can be changed 
 To hide all links you can make them black like the rest of the text (Line 168):
 
 ```tex
-\hypersetup{hidelinks=true,}
+\hypersetup{hidelinks}
 ```
 
 ### Listings
@@ -64,10 +113,16 @@ Usually, when I reference another chapter, I would write `see chapter \ref{chapt
 ```
 where you have to get the brackets and braces right, I implemented the commands `\chapref{}` and `\appref{}`. Those will print the link as shown above, with the correct translation of either 'chapter' or 'appendix'.
 
+
+### Figure Referencing
+
+Just like [chapref](#chapter-referencing), `\figref{<figureReference>}` will print `Figure X` (or the translation if set) as a clickable link.
+
 ## Development
 
 This template is under continuous development and will be updated from time to time.
 
 ## License
 
-The template is licensed under the CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). The `.cls`-File is licensed under the LPPL v1.3c (http://www.latex-project.org/lppl).
+The template is licensed under the CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/; see also the [License file](LICENSE.md)).  
+The `.cls`-File is licensed under the LPPL v1.3c (http://www.latex-project.org/lppl).

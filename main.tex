@@ -1,11 +1,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Version 1.5.2 (2019-06-12)
+% Version 1.5.3 (2019-09-30)
 %
 % Created by Vel (vel@latextemplates.com) and Johannes Böttcher
 % Based on https://www.latextemplates.com/template/masters-doctoral-thesis
 %
-% Modified by Nils Siegle & Christian Hauff
-%  
+% Modified by Nils Siegle & Christian Hauff (@christianhauff)
+%
 % Template license:
 % CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -54,7 +54,7 @@
 % ------ FONTS ------
 \usepackage[T1]{fontenc} % Output font encoding
 \usepackage[utf8]{inputenc} % Required for inputting international characters
-\usepackage{lmodern,textcomp} %Latin modern font
+\usepackage{lmodern,textcomp} % Latin modern font
 \usepackage{mathpazo} % Use the Palatino font by default
 
 % ------ BIBLIOGRAPHY ------
@@ -174,10 +174,10 @@
 %----------------------------------------------------------------------------------------
 
 \thesistitle{Catchy Title} % Your thesis title, print it elsewhere with \ttitle
+\author{Max \textsc{Mustermann}} % Your name, print it elsewhere with \authorname
 \supervisor{Prof. Supervisor} % Your supervisor's name, print it elsewhere with \supname
 \examiner{Prof. Dr. Examiner} % Your examiner's name, print it elsewhere with \examname
 \degree{Bachelor Thesis} % Your degree name, print it elsewhere with \degreename
-\author{Max \textsc{Mustermann}} % Your name, print it elsewhere with \authorname
 \addresses{} % Your address, print it elsewhere with \addressname
 
 \subject{Computer Sciences} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
@@ -189,7 +189,7 @@
 \AtBeginDocument{
   \hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
   \hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
-  \hypersetup{hidelinks=true,} % Prints all links black; comment out for default LaTeX behavior
+  \hypersetup{hidelinks} % Prints all links black; comment out for default LaTeX behavior
 }
 
 \begin{document}
