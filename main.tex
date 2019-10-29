@@ -68,6 +68,7 @@
 \usepackage{subcaption} % Required for nested captions
 \usepackage{wrapfig} % Required for wrapping text around figures
 % \usepackage{forest} % For generating directory trees
+% https://tex.stackexchange.com/questions/5073/making-a-simple-directory-tree/270761#270761 Forest examples
 
 % ------ TRANSLATIONS ------
 \usepackage{translator}
@@ -151,7 +152,8 @@
 
 % Better highlighting for inline code
 \newcommand{\linecode}[1]{
-  \textbf{\texttt{#1}}
+  \setlength{\fboxsep}{0pt}
+  \colorbox{lstbg}{\textcolor{lstStr}{\textbf{\texttt{#1}}}}
 }
 
 % Outputs 'Chapter X' (or translation) as a clickable link
