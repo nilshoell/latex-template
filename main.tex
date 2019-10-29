@@ -151,24 +151,23 @@
 }
 
 % Better highlighting for inline code
-\newcommand{\linecode}[1]{
-  \setlength{\fboxsep}{0pt}
-  \colorbox{lstbg}{\textcolor{lstStr}{\textbf{\texttt{#1}}}}
+\newcommand{\linecode}[1]{%
+  \colorbox{lstbg}{\textcolor{lstStr}{\textbf{\texttt{#1}}}}%
 }
 
 % Outputs 'Chapter X' (or translation) as a clickable link
-\newcommand{\chapref}[1]{
-  \hyperref[#1]{\translate{chapter} \ref{#1}}
+\newcommand{\chapref}[1]{%
+  \hyperref[#1]{\translate{chapter} \ref{#1}}%
 }
 
 % Outputs 'Figure X' (or translation) as a clickable link
-\newcommand{\figref}[1]{
-  \hyperref[#1]{\translate{figure} \ref{#1}}
+\newcommand{\figref}[1]{%
+  \hyperref[#1]{\translate{figure} \ref{#1}}%
 }
 
 % Outputs 'Appendix X' (or translation) as a clickable link
-\newcommand{\appref}[1]{
-  \hyperref[#1]{\translate{appendix} \ref{#1}}
+\newcommand{\appref}[1]{%
+  \hyperref[#1]{\translate{appendix} \ref{#1}}%
 }
 
 %----------------------------------------------------------------------------------------
