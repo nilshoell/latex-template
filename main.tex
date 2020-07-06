@@ -1,10 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Version 1.5.3 (2019-09-30)
+% Version 1.6.0 (2020-07-06)
 %
 % Created by Vel (vel@latextemplates.com) and Johannes Böttcher
 % Based on https://www.latextemplates.com/template/masters-doctoral-thesis
 %
-% Modified by Nils Siegle & Christian Hauff (@christianhauff)
+% Modified by Nils Höll & Christian Hauff (@christianhauff)
 %
 % Template license:
 % CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
@@ -18,7 +18,7 @@
 \documentclass[
   11pt, % The default document font size, options: 10pt, 11pt, 12pt
   oneside, % One side output by default, comment it out to switch to two side with alternating margins
-  ngerman, % ngerman for (new) German -> (New spelling, important for line breaks in a word)
+  english, % AE: american, BE: english ngerman for (new) German -> (New spelling, important for line breaks in a word)
   singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
   % draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
   % nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
@@ -31,6 +31,9 @@
   % consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 
+% Change depth of section numbering and table of contents representation
+\setcounter{secnumdepth}{2} % Numbers down to \subsection; no \subsubsection
+\setcounter{tocdepth}{2} % Printed in toc down to \subsection; no \subsubsection
 
 %----------------------------------------------------------------------------------------
 %  MARGIN SETTINGS
@@ -48,6 +51,26 @@
 
 
 %----------------------------------------------------------------------------------------
+%  THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+\thesistitle{Catchy Title} % Your thesis title, print it elsewhere with \ttitle
+\author{Max \textsc{Mustermann}} % Your name, print it elsewhere with \authorname
+\matnr{123456} % Matriculation number, print it elsewhere with \matnumber
+\mailaddress{max.mustermann@myserver.com} % eMail address, print elsewhere with \email
+\addresses{} % Your address, print it elsewhere with \addressname
+
+\degree{Master Thesis} % Your degree name, print it elsewhere with \degreename
+
+\supervisor{Dr. Supervisor} % Your supervisor's name, print it elsewhere with \supname
+\examiner{Prof. Dr. Examiner} % Your examiner's name, print it elsewhere with \examname
+
+\subject{Computer Sciences} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+\university{\href{https://myserver.com/}{University}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
+\faculty{\href{https://myserver.com/}{Faculty}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+
+
+%----------------------------------------------------------------------------------------
 %  PACKAGES
 %----------------------------------------------------------------------------------------
 
@@ -56,11 +79,26 @@
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage{lmodern,textcomp} % Latin modern font
 \usepackage{mathpazo} % Use the Palatino font by default
+% \usepackage{mathptmx} Similar to TNR
+
+% Print URLs in the same font instead of typewriter font
+% \usepackage{url}
+% \urlstyle{same}
+
+% Change chapter/section title sizes and switch to Helvetica for titles
+% \usepackage{helvet}
+% \usepackage{titlesec}
+% \titleformat{\chapter}{\fontsize{16}{20}\bfseries\fontfamily{phv}\selectfont}{\thechapter}{1em}{}
+% \titlespacing*{\chapter}{0pt}{*2.5}{*1.5}
+% \titleformat{\section}{\Large\bfseries\fontfamily{phv}\selectfont}{\thesection}{1em}{}
+% \titleformat{\subsection}{\large\bfseries\fontfamily{phv}\selectfont}{\thesubsection}{1em}{}
+
 
 % ------ BIBLIOGRAPHY ------
 % Use the bibtex backend with the authoryear citation style (which resembles APA); DIN ISO: science
 \usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex}
 \addbibresource{sources.bib} % The filename of the bibliography
+
 
 % ------ FIGURES ------
 \usepackage{graphicx}
@@ -76,9 +114,11 @@
 % Include translations
 \input{translations.tex}
 
+
 % ------ ACRONYMS ------
 \usepackage[nohyperlinks]{acronym}
 % \usepackage[nohyperlinks, printonlyused]{acronym} % Prints only used acronyms in overview
+
 
 % ------ OTHER ------
 \usepackage{shortvrb}
@@ -89,6 +129,7 @@
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography; generates quotes with \enquote{Text}
 \hbadness=99999 %suppresses most underfull hbox warnings
+
 
 % ------ LISTINGS ------
 \usepackage{listings}
@@ -144,46 +185,7 @@
 %  ADDITIONAL COMMANDS
 %----------------------------------------------------------------------------------------
 
-% Option to move href url to footnote for printing
-\newcommand{\printurl}[2]{ % Options below are mutually exclusive!
-   \href{#1}{#2} % Uncomment for standard href
-  % #2\footnote{#1} % Uncomment for print mode, URL in footnote
-}
-
-% Better highlighting for inline code
-\newcommand{\linecode}[1]{%
-  \colorbox{lstbg}{\textcolor{lstStr}{\textbf{\texttt{#1}}}}%
-}
-
-% Outputs 'Chapter X' (or translation) as a clickable link
-\newcommand{\chapref}[1]{%
-  \hyperref[#1]{\translate{chapter} \ref{#1}}%
-}
-
-% Outputs 'Figure X' (or translation) as a clickable link
-\newcommand{\figref}[1]{%
-  \hyperref[#1]{\translate{figure} \ref{#1}}%
-}
-
-% Outputs 'Appendix X' (or translation) as a clickable link
-\newcommand{\appref}[1]{%
-  \hyperref[#1]{\translate{appendix} \ref{#1}}%
-}
-
-%----------------------------------------------------------------------------------------
-%  THESIS INFORMATION
-%----------------------------------------------------------------------------------------
-
-\thesistitle{Catchy Title} % Your thesis title, print it elsewhere with \ttitle
-\author{Max \textsc{Mustermann}} % Your name, print it elsewhere with \authorname
-\supervisor{Prof. Supervisor} % Your supervisor's name, print it elsewhere with \supname
-\examiner{Prof. Dr. Examiner} % Your examiner's name, print it elsewhere with \examname
-\degree{Bachelor Thesis} % Your degree name, print it elsewhere with \degreename
-\addresses{} % Your address, print it elsewhere with \addressname
-
-\subject{Computer Sciences} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
-\university{\href{https://myserver.com/}{University}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
-\faculty{\href{https://myserver.com/}{Faculty}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+\input{commands.tex}
 
 
 % ------ HYPERSETUP ------
@@ -260,6 +262,7 @@
 % - \acs{id} for acronym
 % - \acl{id} for long version
 % - \acp{id} for plural (with 's' at the end)
+% - \newacro{id}[Acronym]{Long Name} to define acronyms outside the abbreviations list; e.g. for shorthands
 % See https://de.wikibooks.org/wiki/LaTeX-W%C3%B6rterbuch:_Abk%C3%BCrzungsverzeichnis
 
 \newpage
@@ -276,11 +279,12 @@
 % Include the chapters of the thesis as separate files from the Chapters folder
 % Uncomment the lines as you write the chapters
 
-\include{Chapters/Chapter1}
-\include{Chapters/Chapter2}
-\include{Chapters/Chapter3}
-\include{Chapters/Chapter4}
-\include{Chapters/Chapter5}
+\include{Chapters/introduction}
+\include{Chapters/foundations}
+\include{Chapters/methods}
+\include{Chapters/results}
+\include{Chapters/discussion}
+\include{Chapters/conclusion}
 
 
 %----------------------------------------------------------------------------------------
