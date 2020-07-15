@@ -1,9 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-<<<<<<< HEAD
-% Version 1.6.3 (2019-12-17)
-=======
-% Version 1.6.0 (2020-07-06)
->>>>>>> 27a2ffd4a32f48618f57b3e8ad4c7312986ef45c
+% Version 1.7.0 (2020-07-15)
 %
 % Created by Vel (vel@latextemplates.com) and Johannes Böttcher
 % Based on https://www.latextemplates.com/template/masters-doctoral-thesis
@@ -22,11 +18,7 @@
 \documentclass[
   11pt, % The default document font size, options: 10pt, 11pt, 12pt
   oneside, % One side output by default, comment it out to switch to two side with alternating margins
-<<<<<<< HEAD
-  english, % ngerman for (new) German -> (New spelling, important for line breaks in a word)
-=======
   english, % AE: american, BE: english ngerman for (new) German -> (New spelling, important for line breaks in a word)
->>>>>>> 27a2ffd4a32f48618f57b3e8ad4c7312986ef45c
   singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
   % draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
   % nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
@@ -266,12 +258,13 @@
   % \acro{}[]{}
 \end{acronym}
 % Use 
-% - \ac{id} for standard behavior
+% - \ac{id} for standard behavior (\Ac{id} for first letter capitalized)
 % - \acs{id} for acronym
 % - \acl{id} for long version
 % - \acp{id} for plural (with 's' at the end)
+% - \acf{id} for the full version (long name + acronym in parentheses)
 % - \newacro{id}[Acronym]{Long Name} to define acronyms outside the abbreviations list; e.g. for shorthands
-% See https://de.wikibooks.org/wiki/LaTeX-W%C3%B6rterbuch:_Abk%C3%BCrzungsverzeichnis
+% See https://ctan.mirror.norbert-ruehl.de/macros/latex/contrib/acronym/acronym.pdf
 
 \newpage
 \input{Base/glossary.tex}
