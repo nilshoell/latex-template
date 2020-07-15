@@ -1,0 +1,27 @@
+% ---------- CUSTOM COMMANDS ----------
+
+% Option to move href url to footnote for printing
+\newcommand{\printurl}[2]{ % Options below are mutually exclusive!
+   \href{#1}{#2} % Uncomment for standard href
+  % #2\footnote{#1} % Uncomment for print mode, URL in footnote
+}
+
+% Better highlighting for inline code
+\newcommand{\linecode}[1]{%
+  \colorbox{lstbg}{\textcolor{lstStr}{\textbf{\texttt{#1}}}}%
+}
+
+% Outputs 'Chapter X' (or translation) as a clickable link
+\newcommand{\chapref}[1]{%
+  \hyperref[#1]{\translate{chapter} \ref{#1}}%
+}
+
+% Outputs 'Figure X' (or translation) as a clickable link
+\newcommand{\figref}[1]{%
+  \hyperref[#1]{\translate{figure} \ref{#1}}%
+}
+
+% Outputs 'Appendix X' (or translation) as a clickable link
+\newcommand{\appref}[1]{%
+  \hyperref[#1]{\translate{appendix} \ref{#1}}%
+}
