@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Masters/Doctoral Thesis
 % Class File
-% Version 1.6 (27/8/17)
+% Version 1.7 (2020-07-20)
 %
 % This class was downloaded from:
 % http://www.LaTeXTemplates.com
@@ -10,7 +10,7 @@
 % Vel (vel@latextemplates.com)
 % Johannes Böttcher
 %
-% Modified by Nils Siegle
+% Modified by Nils Höll
 %
 % Notes:
 % 1) This class file defines the structure and layout of the template file (main.tex).
@@ -29,7 +29,7 @@
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
 \newcommand{\classname}{MastersDoctoralThesis}
-\ProvidesClass{\classname}[2016/11/22 v1.5 LaTeXTemplates.com]
+\ProvidesClass{\classname}[2020/07/20 v1.7.1 Thesis]
 \providecommand{\baseclass}{book}
 \RequirePackage{etoolbox}
 \RequirePackage{xparse}
