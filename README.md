@@ -4,6 +4,8 @@ This LaTeX template was originally developed by Vel (vel@latextemplates.com) and
 
 This version is now optimized and prepared for the documentation of programming or software engineering works and comes with a lot of packages I found useful.
 
+Tested with TexLive 2020 & pdflatex.
+
 - [LaTeX Thesis Template](#latex-thesis-template)
   - [Usage](#usage)
     - [Basic Setup](#basic-setup)
