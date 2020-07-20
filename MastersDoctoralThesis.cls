@@ -433,6 +433,13 @@ KOMA-script documentation for details.}]{fancyhdr}
 }
 
 %----------------------------------------------------------------------------------------
+%	GLOSSARY
+%----------------------------------------------------------------------------------------
+\newcommand{\glossaryname}{Glossary}
+\providecaptionname{english,british,american}{\glossaryname}{Glossary}
+\providecaptionname{ngerman,german,austrian,naustrian}{\glossaryname}{Glossar}
+
+%----------------------------------------------------------------------------------------
 %	DECLARATION PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
