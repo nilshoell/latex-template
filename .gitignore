@@ -23,6 +23,7 @@
 *.mtc1
 *.out
 *.synctex.gz
+*.bcf
 main.run.xml
 *.lol
 main.pdf

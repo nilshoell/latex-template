@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Version 1.7.1 (2020-07-20)
+% Version 1.7.2 (2021-01-19)
 %
 % Created by Vel (vel@latextemplates.com) and Johannes Böttcher
 % Based on https://www.latextemplates.com/template/masters-doctoral-thesis
@@ -55,10 +55,9 @@
 %----------------------------------------------------------------------------------------
 
 % Author information
-\author{Max \textsc{Mustermann}} % Your name, print it elsewhere with \authorname
-\matnr{123456} % Matriculation number, print it elsewhere with \matnumber
-\mailaddress{max.mustermann@myserver.com} % eMail address, print elsewhere with \email
-\addresses{Sample Street 25\\456965 Sample City} % Your address, print it elsewhere with \addressname
+% Copy `Base/author_info.dist.tex` into `Base/author_info.tex` and set the values
+% if you do not want personal data to end up in a public git repository
+\IfFileExists{Base/author_info.tex}{\input{Base/author_info.tex}}{\input{Base/author_info.dist.tex}}
 
 % Thesis information
 \thesistitle{Catchy Title} % Your thesis title, print it elsewhere with \ttitle
@@ -82,19 +81,6 @@
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage{lmodern,textcomp} % Latin modern font
 \usepackage{mathpazo} % Use the Palatino font by default
-% \usepackage{mathptmx} % Similar to TNR
-
-% Print URLs in the same font instead of typewriter font
-% \usepackage{url}
-% \urlstyle{same}
-
-% Change chapter/section title sizes and switch to Helvetica for titles
-% \usepackage{helvet}
-% \usepackage{titlesec}
-% \titleformat{\chapter}{\fontsize{16}{20}\bfseries\fontfamily{phv}\selectfont}{\thechapter}{1em}{}
-% \titlespacing*{\chapter}{0pt}{*2.5}{*1.5}
-% \titleformat{\section}{\Large\bfseries\fontfamily{phv}\selectfont}{\thesection}{1em}{}
-% \titleformat{\subsection}{\large\bfseries\fontfamily{phv}\selectfont}{\thesubsection}{1em}{}
 
 
 % ------ BIBLIOGRAPHY ------
@@ -108,8 +94,7 @@
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{subcaption} % Required for nested captions
 \usepackage{wrapfig} % Required for wrapping text around figures
-% \usepackage{forest} % For generating directory trees
-% https://tex.stackexchange.com/questions/5073/making-a-simple-directory-tree/270761#270761 Forest examples
+
 
 % ------ TRANSLATIONS ------
 \usepackage{translator}
@@ -119,8 +104,7 @@
 
 
 % ------ ACRONYMS ------
-\usepackage[nohyperlinks]{acronym}
-% \usepackage[nohyperlinks, printonlyused]{acronym} % Prints only used acronyms in overview
+\usepackage[nohyperlinks, printonlyused]{acronym}
 
 
 % ------ OTHER ------
@@ -193,10 +177,21 @@
 
 % ------ HYPERSETUP ------
 \AtBeginDocument{
-  \hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
-  \hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
-  \hypersetup{hidelinks} % Prints all links black; comment out for default LaTeX behavior
+  \hypersetup{
+    pdftitle=\ttitle, % Set the PDF's title to your title
+    pdfauthor=\authorname, % Set the PDF's author to your name
+    % hidelinks % Prints all links black; comment out the following color defs
+    linkcolor=cyan,
+    citecolor=olive,
+    filecolor=magenta,
+    urlcolor=blue,
+    }
 }
+
+
+%----------------------------------------------------------------------------------------
+%  DOCUMENT START
+%----------------------------------------------------------------------------------------
 
 \begin{document}
 
@@ -207,6 +202,8 @@
 \pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
 
 \sloppy
+
+% ------ PRELIMINARY PAGES ------
 
 % Include title page
 \input{Base/titlepage.tex}
@@ -225,18 +222,17 @@
 % Include acknowledgements page
 \input{Base/acknowledgements.tex}
 
+
 %----------------------------------------------------------------------------------------
 %  LIST OF CONTENTS/FIGURES/TABLES PAGES
 %----------------------------------------------------------------------------------------
+
 {\hypersetup{linkcolor=black} % Black links in all lists
   \tableofcontents % Prints the main table of contents
-
   \listoffigures % Prints the list of figures
-
   \listoftables % Prints the list of tables
-
-  \lstlistoflistings %Prints the list of (code) listings
-  \addchaptertocentry{Listings}
+  \lstlistoflistings % Prints the list of (code) listings
+  \addchaptertocentry{Listings} % Add the list of listings to the table of contents
 }
 
 
@@ -270,7 +266,12 @@
 % See https://ctan.mirror.norbert-ruehl.de/macros/latex/contrib/acronym/acronym.pdf
 
 \newpage
+
+
+% ------ GLOSSARY ------
+
 \input{Base/glossary.tex}
+
 
 %----------------------------------------------------------------------------------------
 %  THESIS CONTENT - CHAPTERS
@@ -283,12 +284,12 @@
 % Include the chapters of the thesis as separate files from the Chapters folder
 % Uncomment the lines as you write the chapters
 
-\include{Chapters/introduction}
-\include{Chapters/foundations}
-\include{Chapters/methods}
-\include{Chapters/results}
-\include{Chapters/discussion}
-\include{Chapters/conclusion}
+\include{Chapters/01_introduction}
+\include{Chapters/02_foundations}
+\include{Chapters/03_methods}
+\include{Chapters/04_results}
+\include{Chapters/05_discussion}
+\include{Chapters/06_conclusion}
 
 
 %----------------------------------------------------------------------------------------

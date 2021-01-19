@@ -29,7 +29,7 @@
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
 \newcommand{\classname}{MastersDoctoralThesis}
-\ProvidesClass{\classname}[2020/07/20 v1.7.1 Thesis]
+\ProvidesClass{\classname}[2021/01/19 v1.7.2 Thesis]
 \providecommand{\baseclass}{book}
 \RequirePackage{etoolbox}
 \RequirePackage{xparse}
