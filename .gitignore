@@ -1,5 +1,8 @@
+# Editor config
 .vs/
 .vscode/
+
+# LaTeX auxiliary files
 *.aux
 *.glo
 *.idx
@@ -24,6 +27,12 @@
 *.out
 *.synctex.gz
 *.bcf
-main.run.xml
 *.lol
+main-blx.bib
+main.fdb_latexmk
+main.fls
+main.run.xml
 main.pdf
+
+# LaTeX special files
+Base/author_info.tex

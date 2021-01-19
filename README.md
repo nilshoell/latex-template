@@ -1,6 +1,6 @@
 # LaTeX Thesis Template
 
-This LaTeX template was originally developed by Vel (vel@latextemplates.com) and Johannes Böttcher from [Latextemplates.com](http://www.latextemplates.com/template/masters-doctoral-thesis). After using it for several projects (together with [Christian Hauff](https://github.com/christianhauff)) and finally my bachelor thesis, I recognized that I made several changes to the original template to fit my purposes.
+This LaTeX template was originally developed by Vel (vel@latextemplates.com) and Johannes Böttcher from [Latextemplates.com](http://www.latextemplates.com/template/masters-doctoral-thesis). After using it for several projects (together with [Christian Hauff](https://github.com/christianhauff)) and finally my bachelor and master thesis, I recognized that I made several changes to the original template to fit my purposes.
 
 This version is now optimized and prepared for the documentation of programming or software engineering works and comes with a lot of packages I found useful.
 
@@ -28,10 +28,10 @@ Most (printed) texts are currently in german, but this mainly affects the dummy 
 ### Basic Setup
 
 | Key                | Meaning (if true)                                                                                     |
-| ------------------ | ----------------------------------------------------------------------------------------------------- |
+|--------------------|-------------------------------------------------------------------------------------------------------|
 | `11pt`             | The default document font size, options: 10pt, 11pt, 12pt                                             |
 | `oneside`          | Adds empty pages for one-sided printing, use `twoside` for alternating binding margins                |
-| `ngerman`          | Language loaded by babel, use `english`, `american` or `naustrian` for the respecting languages                   |
+| `ngerman`          | Language loaded by babel, use `english`, `american` or `naustrian` for the respecting languages       |
 | `singlespacing`    | Single line spacing, alternatives: `onehalfspacing` or `doublespacing`                                |
 | `draft`            | Enable draft mode (no pictures, no links, overfull hboxes indicated)                                  |
 | `nolistspacing`    | If the document is onehalfspacing or doublespacing; sets spacing in lists to single                   |
@@ -45,12 +45,14 @@ Most (printed) texts are currently in german, but this mainly affects the dummy 
 
 ### Thesis Information
 
+**Note:** Personal information of the author is now located in the file `Base/auth_info.dist.tex`. If you use this template in a public repo and you do not want to disclose personal information, just copy the contents of that file into `Base/auth_info.tex` and put in on your `.gitignore`, LaTeX will automatically switch to the new file.
+
 | Variable       | Meaning                                  | Usage          |
-| -------------- | ---------------------------------------- | -------------- |
+|----------------|------------------------------------------|----------------|
 | `\thesistitle` | Title of the thesis                      | `\ttitle`      |
 | `\author`      | Name of the author                       | `\authorname`  |
-| `\matnr`      | Matriculation number                       | `\matnumber`  |
-| `\mailaddress`      | E-Mail address                       | `\email`  |
+| `\matnr`       | Matriculation number                     | `\matnumber`   |
+| `\mailaddress` | E-Mail address                           | `\email`       |
 | `\addresses`   | Address of the author                    | `\addressname` |
 | `\degree`      | Name of the degree (Master/Bachelor/PhD) | `\degreename`  |
 | `\supervisor`  | Name of the supervisor                   | `\supname`     |
@@ -69,7 +71,7 @@ The `translations.tex`-file provides a couple of additional translations that ar
 
 Two options are available for prettifying the document if it needs to be printed:
 
-The `\printurl{}{}`-Command (`commands.tex`) works like the standard `\href`, but can be changed to print the url in a footnote, as hyperlinks do somehow not work in printed documents. Just change the definition of the command in line 128 of the `main.tex`-file as follows (Please only activate **one** of the definitions):
+The `\printurl{}{}`-Command (in the file `commands.tex`) works like the standard `\href`, but can be changed to print the url in a footnote, as hyperlinks do somehow not work in printed documents. Just change the definition of the command in the `commands.tex`-file as follows (Please only activate **one** of the definitions):
 
 ```tex
 \newcommand{\printurl}[2]{
@@ -78,7 +80,7 @@ The `\printurl{}{}`-Command (`commands.tex`) works like the standard `\href`, bu
 }
 ```
 
-To hide all links you can make them black like the rest of the text (line 187):
+To hide all links you can make them black like the rest of the text (line 183):
 
 ```tex
 \hypersetup{hidelinks}
@@ -126,22 +128,7 @@ Just like [chapref](#chapter-referencing), `\figref{fig:sample_figure}` will pri
 
 ## SITM-Compliance
 
-To be compliant with the thesis template chair for Strategic IT-Management at the UDE, a couple of changes have to be made:
-
-- Change language to `american`
-- Change spacing to `onehalfspacing`
-- Geometry: `inner=4cm`, `outer=2.5cm`, `bindingoffset=0cm`, `top=2cm`, `bottom=2cm`
-- Fonts:
-  - Comment out/remove the packages `lmodern` and `mathpazo`
-  - Body has to be Times New Roman; provided by the package `mathptmx` (line 82)
-  - Standard font for URLs: package `url` and `\urlstyle{same}` (line 85/86)
-  - Helvetica (clone of Arial) for Headings/Titles, activate the lines 89-94
-- Change page numbering to small roman letters (`\pagenumbering{Roman}` to `\pagenumbering{roman}`; line 202)
-- Include the alternative title page: `\input{Base/titlepage_alt.tex}`
-- Remove declaration, quotation and acknowledgement pages
-- For the abstract, use `\input{Base/abstract_dual.tex}` to get a second heading for the german abstract, without generating a second entry in the toc
-- Remove listings (lines 235/236) from toc and document
-- Remove the glossary page
+To be compliant with the thesis template chair for Strategic IT-Management at the UDE, switch to the branch `sitm`.
 
 
 ## Development
