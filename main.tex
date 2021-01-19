@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Version 1.7.1 (2020-07-20)
+% Version 1.7.2-sitm (2021-01-19)
 %
 % Created by Vel (vel@latextemplates.com) and Johannes Böttcher
 % Based on https://www.latextemplates.com/template/masters-doctoral-thesis
@@ -18,8 +18,8 @@
 \documentclass[
   11pt, % The default document font size, options: 10pt, 11pt, 12pt
   oneside, % One side output by default, comment it out to switch to two side with alternating margins
-  english, % AE: american, BE: english ngerman for (new) German -> (New spelling, important for line breaks in a word)
-  singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+  american, % AE: american, BE: english ngerman for (new) German -> (New spelling, important for line breaks in a word)
+  onehalfspacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
   % draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
   % nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
   liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
@@ -41,11 +41,11 @@
 
 \geometry{
   paper=a4paper, % Change to letterpaper for US letter
-  inner=2.8cm, % Inner margin
-  outer=2.8cm, % Outer margin
-  bindingoffset=.5cm, % Binding offset
-  top=1.5cm, % Top margin
-  bottom=1.5cm, % Bottom margin
+  inner=4cm, % Inner margin
+  outer=2.5cm, % Outer margin
+  bindingoffset=0cm, % Binding offset
+  top=2cm, % Top margin
+  bottom=2cm, % Bottom margin
   % showframe, % Uncomment to show how the type block is set on the page
 }
 
@@ -80,21 +80,21 @@
 % ------ FONTS ------
 \usepackage[T1]{fontenc} % Output font encoding
 \usepackage[utf8]{inputenc} % Required for inputting international characters
-\usepackage{lmodern,textcomp} % Latin modern font
-\usepackage{mathpazo} % Use the Palatino font by default
-% \usepackage{mathptmx} % Similar to TNR
+% \usepackage{lmodern,textcomp} % Latin modern font
+% \usepackage{mathpazo} % Use the Palatino font by default
+\usepackage{mathptmx} % Similar to TNR
 
 % Print URLs in the same font instead of typewriter font
-% \usepackage{url}
-% \urlstyle{same}
+\usepackage{url}
+\urlstyle{same}
 
 % Change chapter/section title sizes and switch to Helvetica for titles
-% \usepackage{helvet}
-% \usepackage{titlesec}
-% \titleformat{\chapter}{\fontsize{16}{20}\bfseries\fontfamily{phv}\selectfont}{\thechapter}{1em}{}
-% \titlespacing*{\chapter}{0pt}{*2.5}{*1.5}
-% \titleformat{\section}{\Large\bfseries\fontfamily{phv}\selectfont}{\thesection}{1em}{}
-% \titleformat{\subsection}{\large\bfseries\fontfamily{phv}\selectfont}{\thesubsection}{1em}{}
+\usepackage{helvet}
+\usepackage{titlesec}
+\titleformat{\chapter}{\fontsize{16}{20}\bfseries\fontfamily{phv}\selectfont}{\thechapter}{1em}{}
+\titlespacing*{\chapter}{0pt}{*2.5}{*1.5}
+\titleformat{\section}{\Large\bfseries\fontfamily{phv}\selectfont}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\fontfamily{phv}\selectfont}{\thesubsection}{1em}{}
 
 
 % ------ BIBLIOGRAPHY ------
@@ -202,14 +202,14 @@
 
 % ------ PAGE NUMBERING ------
 \frontmatter % Use roman page numbering style (I, II, III, IV...) for the pre-content pages
-\pagenumbering{Roman} % Capital roman numbers, use "roman" or comment for lower case (i, ii, iii, iv...)
+\pagenumbering{roman} % Capital roman numbers, use "roman" or comment for lower case (i, ii, iii, iv...)
 
 \pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
 
 \sloppy
 
 % Include title page
-\input{Base/titlepage.tex}
+\input{Base/titlepage_alt.tex}
 
 % Include declaration of independence
 \input{Base/declaration.tex}
@@ -220,7 +220,7 @@
 \input{Base/quotation.tex}
 
 % Include abstract page
-\input{Base/abstract.tex}
+\input{Base/abstract_dual.tex}
 
 % Include acknowledgements page
 \input{Base/acknowledgements.tex}
@@ -235,8 +235,8 @@
 
   \listoftables % Prints the list of tables
 
-  \lstlistoflistings %Prints the list of (code) listings
-  \addchaptertocentry{Listings}
+  % \lstlistoflistings %Prints the list of (code) listings
+  % \addchaptertocentry{Listings}
 }
 
 
@@ -270,7 +270,7 @@
 % See https://ctan.mirror.norbert-ruehl.de/macros/latex/contrib/acronym/acronym.pdf
 
 \newpage
-\input{Base/glossary.tex}
+% \input{Base/glossary.tex}
 
 %----------------------------------------------------------------------------------------
 %  THESIS CONTENT - CHAPTERS

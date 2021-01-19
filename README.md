@@ -126,7 +126,7 @@ Just like [chapref](#chapter-referencing), `\figref{fig:sample_figure}` will pri
 
 ## SITM-Compliance
 
-To be compliant with the thesis template chair for Strategic IT-Management at the UDE, a couple of changes have to be made:
+To be compliant with the thesis template chair for Strategic IT-Management at the UDE, a couple of changes have to be made (already done in this branch):
 
 - Change language to `american`
 - Change spacing to `onehalfspacing`
