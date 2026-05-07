@@ -1,7 +1,7 @@
 # LaTeX Thesis Template
 
 > [!WARNING]
-> **THIS REPOSITORY IS ARCHIVED - Further development moved to [Codeberg](https://codeberg.org/nilshoell/latex-template)**
+> **THIS REPOSITORY IS ARCHIVED - Further development moved to [Codeberg](https://codeberg.org/nilshoell/latex-thesis-template)**
 
 This LaTeX template was originally developed by Vel (vel@latextemplates.com) and Johannes Böttcher from [Latextemplates.com](http://www.latextemplates.com/template/masters-doctoral-thesis). After using it for several projects (together with [Christian Hauff](https://github.com/christianhauff)) and finally my bachelor and master thesis, I recognized that I made several changes to the original template to fit my purposes.
 
